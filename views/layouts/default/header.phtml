@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Framework básico</title>
+	<link rel="stylesheet" href="<?php echo APP_URL; ?>views/layouts/default/css/normalize.min.css">
+	<link rel="stylesheet" href="<?php echo APP_URL; ?>views/layouts/default/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo APP_URL; ?>views/layouts/default/css/main.css">
+	<script src="views/layouts/default/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+		<header>
+			<div class="div col-md-6"><h1>Money Tracking</h1></div>
+			<div class="div col-md-6">
+				<?php
+					if (isset($_SESSION['username'])) { ?>
+
+					<h4>Hola <?php echo $_SESSION['username']; ?></h4>
+					<a class="btn btn-danger" href="<?php echo APP_URL?>users/logout">Salir</a>
+				<?php }?>
+			</div>
+		</header>
+		</div>
+	
+		
+	<div class="row">
+		<div class="col-md-12">
+			<nav>
+				<ul class="nav nav-tabs">
+					<li role="presentation"><a href="<?php echo APP_URL?>">Inicio</a></li>
+					<li role="presentation"><a href="<?php echo APP_URL?>users">Users</a></li>
+					<li role="presentation"><a href="<?php echo APP_URL?>pages">Páginas</a></li>
+					<li role="presentation"><a href="<?php echo APP_URL?>categories">Categories</a></li>
+					<li role="presentation"><a href="<?php echo APP_URL?>transactions">Transaction</a></li>
+					<li role="presentation"><a href="<?php echo APP_URL?>accounts">Accounts</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	
